@@ -1,0 +1,48 @@
+name: Kansky
+version: 1.0
+author: seekankan
+main: io.seekankan.github.kansky.Kansky
+
+depend: [PlaceholderAPI]
+softdepend: [MythicMobs]
+
+commands:
+  kansky:
+    aliases: ["ks"]
+    description: A Kansky command.
+    usage: /kansky <arg>
+  playerdata:
+    description: A command that list Kansky-plugin's player data
+    usage: /playerdata
+  itemnbt:
+    description: A get hand item nbt command.
+    usage: /itemnbt
+  slayer:
+    description: A command that choose mythic mobs slayer.
+    usage: /slayer [slayer name]
+permissions:
+  kansky.user.kansky:
+    default: true
+  kansky.user.state:
+    default: true
+  kansky.user.forge:
+    default: true
+
+  kansky.user.slayer:
+    default: true
+
+  kansky.admin.reload:
+    default: op
+  kansky.admin.clearattribute:
+    default: op
+  kansky.admin.getitem:
+    default: op
+  kansky.admin.playerdata:
+    default: op
+  kansky.admin.itemnbt:
+    default: op
+
+  kansky.user.*:
+    default: true
+  kansky.admin.*:
+    default: op

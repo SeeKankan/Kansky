@@ -1,0 +1,6 @@
+Reporter:
+  server: 6711ce3d-3a9b-40ac-b8d0-0922436a2690
+  enabled: true
+  data:
+    core: true
+    plugins: true

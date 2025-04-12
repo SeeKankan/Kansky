@@ -1,0 +1,30 @@
+AdminSword:
+  ==: io.seekankan.github.kansky.kanattribute.DefaultItem
+  display_name: "Admin sword"
+  material: GOLD_SWORD
+  item_id: "AdminSword"
+  nbt: "{}"
+DefenseSword:
+  ==: io.seekankan.github.kansky.kanattribute.DefaultItem
+  display_name: "Defense sword"
+  material: IRON_SWORD
+  item_id: "DefenseSword"
+  nbt: "{}"
+SuperAdminSword:
+  ==: io.seekankan.github.kansky.kanattribute.DefaultItem
+  display_name: "Super Admin sword"
+  material: DIAMOND_SWORD
+  item_id: "SuperAdminSword"
+  nbt: "{}"
+AdminHat:
+  ==: io.seekankan.github.kansky.kanattribute.DefaultItem
+  display_name: "Admin hat"
+  material: IRON_HELMET
+  item_id: "AdminHat"
+  nbt: "{}"
+KanGold:
+  ==: io.seekankan.github.kansky.kanattribute.DefaultItem
+  display_name: "Kankan's gold"
+  material: GOLD_INGOT
+  item_id: "KanGold"
+  nbt: "{}"

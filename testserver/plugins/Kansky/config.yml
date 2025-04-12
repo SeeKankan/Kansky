@@ -1,0 +1,31 @@
+attribute:
+  calc_async: true
+  # x / x + damage-decrease
+  defense_decrease: 100
+  defense_min: 0
+  damage_min: 5
+  strength_division: 100
+  strength_add: 1
+  strength_min: 0
+  crit_damage_division: 100
+  crit_damage_add: 1
+  crit_damage_min: 0
+  crit_chance_add: 0.2
+client:
+  #@@@@@@@@@@
+  #@@@@@@@@@@
+  health_scale: 40
+  health_list: true
+override:
+  armor_clear: true
+  ignored_armor_enchantments: false
+  infinity_attack_speed: false
+  bow_melee_attack: false
+  shield: false
+  only_pickup_self_drop: true
+debug: true
+#20 * 60 = 1200
+autosave: 1200
+gui:
+  # 20 * 1 = 20
+  refresh_cooldown: 20

@@ -1,0 +1,39 @@
+AdminSword:
+  ==: io.seekankan.github.kansky.kanattribute.ItemConfig
+  display_name: "Test item"
+  attribute:
+    damage:
+      slot:
+        - MAINHAND
+      value: 100
+DefenseSword:
+  ==: io.seekankan.github.kansky.kanattribute.ItemConfig
+  display_name: "Test2 item"
+  attribute:
+    defense:
+      slot:
+        - OFFHAND
+      value: 100
+SuperAdminSword:
+  ==: io.seekankan.github.kansky.kanattribute.ItemConfig
+  display_name: "Super admin sword"
+  attribute:
+    damage:
+      slot:
+        - MAINHAND
+      value: 1000
+AdminHat:
+  ==: io.seekankan.github.kansky.kanattribute.ItemConfig
+  display_name: "Admin hat"
+  attribute:
+    health:
+      slot:
+        - HEAD
+      value: 1000
+    defense:
+      slot:
+        - HEAD
+      value: 500
+KanGold:
+  ==: io.seekankan.github.kansky.kanattribute.ItemConfig
+  display_name: "Kankan's gold"

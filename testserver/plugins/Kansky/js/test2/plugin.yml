@@ -1,0 +1,5 @@
+name: Test2
+version: 1.0
+author: seekankan
+main: "./script.js"
+depend: ["Test"]

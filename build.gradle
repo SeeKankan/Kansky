@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id("com.gradleup.shadow") version "8.3.0"
+}
+
+group 'io.seekankan.github'
+version '1.0-SNAPSHOT'
+
+build {
+    dependsOn(shadowJar)
+}
+shadowJar {
+    relocate("de.tr7zw.changeme.nbtapi", "io.seekankan.github.kansky.nbtapi")
+}
+task copyPlugin(type:Copy) {
+    from file("${rootDir}/build/libs/kansky-1.0-SNAPSHOT-all.jar")
+    into file("${rootDir}/testserver/plugins")
+}
+
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://mvn.lumine.io/repository/maven-public/' }
+    maven {
+        name = "CodeMC"
+        url = uri("https://repo.codemc.io/repository/maven-public/")
+    }
+    maven {
+        url = 'https://repo.extendedclip.com/releases/'
+    }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    compileOnly 'org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT'
+    implementation("de.tr7zw:item-nbt-api:2.14.1")
+    compileOnly 'me.clip:placeholderapi:2.11.6'
+    compileOnly 'io.lumine:Mythic-Dist:4.13.0'
+
+    compileOnly fileTree(dir: 'lib/compileOnly', includes: ['*.jar'])
+    implementation fileTree(dir: 'lib/implementation', includes: ['*.jar'])
+
+//    //json
+//    implementation("com.fasterxml.jackson.core:jackson-core:2.18.3")
+//    implementation("com.fasterxml.jackson.core:jackson-annotations:2.18.3")
+//    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.3")
+}

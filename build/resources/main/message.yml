@@ -1,0 +1,28 @@
+NBT:
+  INIT_FAIL: "NBT-API wasn't initialized properly, disabling the plugin"
+DEPEND:
+  PAPI_REGISTER_EXPANSION: "register placeholder expansion now."
+  PAPI_MISSING: "Could not find PlaceholderAPI! This plugin will NOT register placeholder expansion."
+COMMAND:
+  NOT_ENOUGH_PERMISSION: "You dont have enough permission to run this command!"
+  RELOAD_SUCCESS: "Kansky plugin reload success."
+  KANSKY:
+    USAGE: "Usage: /kansky {reload | state}"
+    USGAE_RAW: "/kansky {reload | state}"
+  PLAYER_DATA:
+    USAGE: "Usage: /playerdata {list}"
+  INVALID_ARGS: "Invalid args! the correct usage is:"
+  INVALID_SENDER: "This command cannot execute on you!"
+JS:
+  LOAD_SUCCESS: "Javascript load success."
+MUST_DOUBLE_DROP: "You must double drop to throw this item!"
+FORGE:
+  FINISH: "Forge is finishing!"
+  NOT_ENOUGH_MATERIALS: "You don't have enough forge material!"
+TIME:
+  HOUR: "hours"
+  MINUTE: "minutes"
+  SECOND: "seconds"
+MYTHIC_MOBS:
+  NOT_CHOOSE_SLAYER: "No slayer!"
+  INVALID_SLAYER: "Invalid slayer! Please enter correct slayer name."

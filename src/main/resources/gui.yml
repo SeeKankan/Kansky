@@ -1,0 +1,33 @@
+state:
+  size: 27
+  menu:
+    10:
+      material: DIAMOND_SWORD
+      name: "Attack state"
+      lore:
+        - "Damage:%kanskyattribute_damage%"
+    13:
+      material: DIAMOND_CHESTPLATE
+      name: "Defense state"
+      lore:
+       -  "Health:%kanskyattribute_health%"
+       -  "Defense:%kanskyattribute_defense%"
+    16:
+      material: ARROW
+      name: "Other"
+      lore:
+        - ""
+  fill: STAINED_GLASS_PANE
+  title: "Your state"
+slayer:
+  size: 27
+  menu:
+    10:
+      material: BONE
+      name: "Skeleton King"
+      lore:
+        - "Require exp: 100"
+      command: "slayer SkeletonKing"
+      close_when_click: true
+  fill: STAINED_GLASS_PANE
+  title: "Slayer"

@@ -1,0 +1,26 @@
+[
+  {
+    "uuid": "56d80c50-ec5e-348f-813b-03141a4831d3",
+    "name": "Superkankan",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "70693ed3-a261-320d-b122-ef6d4605bd5c",
+    "name": "Seekankan",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "6dd7bfdb-552e-400d-a72c-b4971e9f9628",
+    "name": "Superkankan",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "2a1dbdad-4c67-3be9-94f7-29e916d930b4",
+    "name": "@a",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

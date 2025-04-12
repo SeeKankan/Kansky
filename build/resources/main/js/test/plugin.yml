@@ -1,0 +1,4 @@
+name: Test
+version: 1.0
+author: seekankan
+main: "./script.js"

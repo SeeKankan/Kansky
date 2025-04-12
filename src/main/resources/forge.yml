@@ -1,0 +1,70 @@
+slot: 7
+main_gui:
+  size: 27
+  menu:
+    10:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 0
+    11:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 1
+    12:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 2
+    13:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 3
+    14:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 4
+    15:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 5
+    16:
+      normal_material: FURNACE
+      type: FORGE_SLOT
+      slot: 6
+  fill: STAINED_GLASS_PANE
+  title: "Forge"
+  forge_slot_lore:
+    - "Forge slot {slot}"
+    - "Item: {item}"
+    - "Finishing time: {time}"
+  forge_slot_default_lore:
+    - "Forge slot {slot}"
+    - "You didn't start any forge quest!"
+choose_recipe_gui:
+  size: 54
+  previous_page: 0
+  next_page: 8
+  previous_page_name: "Previous page"
+  next_page_name: "Next page"
+  fill_material: STAINED_GLASS_PANE
+  fill_start: 1
+  fill_last: 8
+  page_material: ARROW
+  format:
+    - "{lore}"
+    - "{cost}"
+forge_item:
+  AdminSword:
+    #30s * 1000
+    time: 30000
+    recipe:
+      kan_gold: 32
+  SuperAdminSword:
+    #3s * 1000
+    time: 3000
+    recipe:
+      kan_gold: 64
+      test: 1
+    then:
+      function: MergeNBT
+      args:
+        - test
