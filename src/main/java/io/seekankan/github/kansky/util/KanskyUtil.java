@@ -11,45 +11,30 @@ import io.seekankan.github.kansky.kanattribute.AttributeTracker;
 import io.seekankan.github.kansky.kanattribute.DamageModifier;
 import io.seekankan.github.kansky.kanattribute.ItemConfig;
 import io.seekankan.github.kansky.kanattribute.Slot;
+import io.seekankan.github.kanutil.util.Maps;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attributable;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.*;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Function;
 
 public class KanskyUtil {
     private KanskyUtil() {}
     public static final UUID CLEAR_ARMOR_UUID = new UUID(0xfadf0cc2,0x0fc96de84);
     public static final UUID CLEAR_ATTACK_SPEED = new UUID(0xfa926ea9,0x2057afec);
     public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
-    public static <K, V,M extends Map<K,V>> M initMap(M map,K k1,V v1, Object ...keyAndValue){
-        map.put(k1,v1);
-        K tempKey = null;
-        for(int index = 0;index < keyAndValue.length;index++){
-            if(index % 2 == 0){
-                tempKey = (K) keyAndValue[index];
-            } else{
-                map.put(tempKey, (V) keyAndValue[index]);
-            }
-        }
-        return map;
-    }
-    public static <K, V> HashMap<K,V> asHashMap(K k1, V v1, Object ...keyAndValue){
-        return initMap(new HashMap<>(),k1,v1,keyAndValue);
-    }
-    public static <K extends Enum<K>,V> EnumMap<K,V> asEnumMap(Class<K> clazz,K k1, V v1 , Object ...keyAndValue){
-        return initMap(new EnumMap<>(clazz),k1,v1,keyAndValue);
-    }
+
     public static ReadableNBT[] getNBTs(ItemStack[] items) {
         ReadableNBT[] nbts = new ReadableNBT[items.length];
         getNBTs(nbts,items);
@@ -124,7 +109,7 @@ public class KanskyUtil {
         };
     }
     public static Map<Slot, List<ItemStack>> getSlotFromEquipment(EntityEquipment eq){
-        return asEnumMap(
+        return Maps.asEnumMap(
                 Slot.class,
                 Slot.MAINHAND,Collections.singletonList(eq.getItemInMainHand()),
                 Slot.OFFHAND,Collections.singletonList(eq.getItemInOffHand()),
@@ -139,9 +124,13 @@ public class KanskyUtil {
         HashMap<Integer,ItemStack> overflowItem = pInv.addItem(items);
         overflowItem.forEach((index,itemStack) -> {
             Item item = (Item) player.getWorld().spawnEntity(player.getLocation(), EntityType.DROPPED_ITEM);
-            NBT.modify(item,nbt -> {
-                nbt.setString("Owner",player.getName());
-                nbt.setString("Thrower",player.getName());
+//            NBT.modify(item,nbt -> {
+//                nbt.setString("Owner",player.getName());
+//                nbt.setString("Thrower",player.getName());
+//            });
+            NBT.modify(item, ItemNBTProxy.class, proxy -> {
+                proxy.setOwner(player.getName());
+                proxy.setThrower(player.getName());
             });
             item.setItemStack(itemStack);
             item.setPickupDelay(0);
@@ -289,5 +278,14 @@ public class KanskyUtil {
     }
     public static long toGameTick(long time) {
         return time / 50;
+    }
+    public static YamlConfiguration getConfig(String ymlName) {
+        Kansky instance = Kansky.getInstance();
+        File file = new File(instance.getDataFolder(),ymlName);
+        if(!file.exists()) {
+            instance.getLogger().info("Create " + ymlName);
+            instance.saveResource(ymlName,true);
+        }
+        return YamlConfiguration.loadConfiguration(file);
     }
 }

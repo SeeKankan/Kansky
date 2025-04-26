@@ -24,4 +24,5 @@ TIME:
   MINUTE: "minutes"
   SECOND: "seconds"
 MYTHIC_MOBS:
+  NOT_CHOOSE_SLAYER: "No slayer!"
   INVALID_SLAYER: "Invalid slayer! Please enter correct slayer name."

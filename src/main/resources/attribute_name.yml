@@ -1,0 +1,7 @@
+damage: "Damage"
+strength: "Strength"
+critchance: "Crit Chance"
+critdamage: "Crit Damage"
+
+#in attacker
+defense: "Defense"

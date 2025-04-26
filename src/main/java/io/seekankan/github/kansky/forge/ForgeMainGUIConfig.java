@@ -4,7 +4,9 @@ import de.tr7zw.changeme.nbtapi.NBT;
 import io.seekankan.github.kansky.Message;
 import io.seekankan.github.kansky.inventory.ForgeMainGUIHolder;
 import io.seekankan.github.kansky.util.ItemCreator;
+import io.seekankan.github.kansky.util.ItemStackNBTProxy;
 import io.seekankan.github.kansky.util.KanskyUtil;
+import io.seekankan.github.kanutil.string.PlaceHolder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -13,13 +15,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ForgeMainGUIConfig {
-    public static final String MARK_FORGE_SLOT = "markforgeslot";
+//    public static final String MARK_FORGE_SLOT = "markforgeslot";
 
     private int size;
     private Map<Integer, Material> forgeSlotMap;
@@ -27,8 +26,10 @@ public class ForgeMainGUIConfig {
     private Map<Integer,Integer> slotLocation;
     private ItemStack fill;
     private String title;
-    private List<String> rawLore;
-    private List<String> noForgeRawLore;
+//    private List<String> rawLore;
+//    private List<String> noForgeRawLore;
+    private PlaceHolder[] rawLorePH;
+    private PlaceHolder[] noForgeRawLorePH;
 
     public ForgeMainGUIConfig(int size, Map<Integer, Material> forgeSlot, Map<Integer, Integer> forgeSlots, ItemStack fill, String title, List<String> rawLore, List<String> noForgeRawLore) {
         this.size = size;
@@ -36,8 +37,16 @@ public class ForgeMainGUIConfig {
         this.slotLocation = forgeSlots;
         this.fill = fill;
         this.title = title;
-        this.rawLore = rawLore;
-        this.noForgeRawLore = noForgeRawLore;
+//        this.rawLore = rawLore;
+//        this.noForgeRawLore = noForgeRawLore;
+        this.rawLorePH = new PlaceHolder[rawLore.size()];
+        this.noForgeRawLorePH = new PlaceHolder[noForgeRawLore.size()];
+        for(int i = 0;i < rawLorePH.length;i++) {
+            rawLorePH[i] = new PlaceHolder(rawLore.get(i),'{','}');
+        }
+        for(int i = 0;i < noForgeRawLorePH.length;i++) {
+            noForgeRawLorePH[i] = new PlaceHolder(noForgeRawLore.get(i),'{','}');
+        }
     }
 
     public static ForgeMainGUIConfig resolveConfig(ConfigurationSection config){
@@ -65,8 +74,9 @@ public class ForgeMainGUIConfig {
             ForgeMeta forgeMeta = ForgeDataUtil.getForgeMeta(player,forgeIndex);
             List<String> lore = getLore(forgeIndex,forgeMeta);
             ItemStack itemStack = new ItemCreator(forgeSlotMap.get(loc)).lore(lore).create();
-            NBT.modify(itemStack, nbt -> {
-                nbt.setInteger(MARK_FORGE_SLOT,forgeIndex);
+            NBT.modify(itemStack, ItemStackNBTProxy.class, nbt -> {
+                nbt.setMarkForgeSlot(forgeIndex);
+//                nbt.setInteger(MARK_FORGE_SLOT,forgeIndex);
             });
             inv.setItem(loc,itemStack);
         }
@@ -81,28 +91,33 @@ public class ForgeMainGUIConfig {
         refreshInventory(player,inv);
         return inv;
     }
-    public static @Nullable Integer getForgeSlotByItem(ItemStack itemStack){
-        return NBT.get(itemStack,nbt -> nbt.hasTag(MARK_FORGE_SLOT) ?  nbt.getInteger(MARK_FORGE_SLOT) : null);
+    public static Optional<Integer> getForgeSlotByItem(ItemStack itemStack){
+        return NBT.modify(itemStack,ItemStackNBTProxy.class, proxy -> {
+//            return nbt.hasTag(MARK_FORGE_SLOT) ?
+//                    nbt.getInteger(MARK_FORGE_SLOT) : null;
+            return Optional.ofNullable(proxy.hasMarkForgeSlot() ? proxy.getMarkForgeSlot() : null);
+        });
     }
     private List<String> getDefFormatLore(String slot){
-        ArrayList<String> lore = new ArrayList<>(noForgeRawLore.size());
-        for (String raw : noForgeRawLore) {
-            lore.add(formatString(raw, slot, "{item}", "{time}"));
+        ArrayList<String> lore = new ArrayList<>(noForgeRawLorePH.length);
+        for (PlaceHolder ph : noForgeRawLorePH) {
+            lore.add(formatString(ph, slot, "{item}", "{time}"));
         }
         return lore;
     }
     private List<String> getFormatLore(String slot,String item,String time){
-        ArrayList<String> lore = new ArrayList<>(rawLore.size());
-        for (String raw : rawLore) {
-            lore.add(formatString(raw, slot, item, time));
+        ArrayList<String> lore = new ArrayList<>(rawLorePH.length);
+        for (PlaceHolder ph : rawLorePH) {
+            lore.add(formatString(ph, slot, item, time));
         }
         return lore;
     }
-    private static String formatString(String raw,String slot,String item,String time){
-        return raw
-                .replace("{slot}",slot)
-                .replace("{item}",item)
-                .replace("{time}",time);
+    private static String formatString(PlaceHolder ph,String slot,String item,String time){
+        return ph.get(new HashMap<String,String>(){{
+            put("slot",slot);
+            put("item",item);
+            put("time",time);
+        }});
     }
     public List<String> getLore(int slot,ForgeMeta meta) {
         if(meta.getForgeItem() == null){

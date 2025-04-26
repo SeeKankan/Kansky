@@ -10,6 +10,7 @@ import io.seekankan.github.kansky.inventory.GUI;
 import io.seekankan.github.kansky.js.JS;
 import io.seekankan.github.kansky.kanattribute.*;
 import io.seekankan.github.kansky.listener.*;
+import io.seekankan.github.kansky.loreupdaters.LoreUpdaters;
 import io.seekankan.github.kansky.mythicmobs.MythicMobsHelper;
 import io.seekankan.github.kansky.papi.Papi;
 import io.seekankan.github.kansky.util.PlayerDatum;
@@ -41,11 +42,12 @@ public class Kansky extends JavaPlugin {
             getPluginLoader().disablePlugin(this);
             return;
         }
-        try {
-            Class.forName("io.seekankan.github.kansky.util.PlayerDatum");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Class.forName("io.seekankan.github.kansky.util.PlayerDatum");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        PlayerDatum.preloadData();
 
         regListeners();
         AttributeTracker.attributeTrackers.addAll(Arrays.asList(
@@ -74,6 +76,8 @@ public class Kansky extends JavaPlugin {
         Message.loadMessage();
         saveDefaultConfig();
         Config.loadConfig();
+        AttributeFormat.loadAttributeFormat();
+        Rarity.loadItemConfig();
         ItemConfig.loadItemConfig();
         DefaultItem.loadDefaultItem();
 //        AttributeTracker.modifierCache.clear();
@@ -82,6 +86,7 @@ public class Kansky extends JavaPlugin {
         GUI.loadGui();
         Forge.loadForge();
         Forge.getForgeConfig().getRecipeGUIConfig().initShowRecipe();
+        LoreUpdaters.loadLoreUpdater();
         new UpdateForgeMainGUIListener().runTaskTimer(this,0,Config.refreshCooldown);
         if(Bukkit.getPluginManager().isPluginEnabled("MythicMobs")) MythicMobsHelper.loadMythicMobs();
         JS.loadJS();

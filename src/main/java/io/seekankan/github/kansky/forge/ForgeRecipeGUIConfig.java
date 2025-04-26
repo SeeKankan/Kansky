@@ -3,6 +3,7 @@ package io.seekankan.github.kansky.forge;
 import de.tr7zw.changeme.nbtapi.NBT;
 import io.seekankan.github.kansky.inventory.ForgeRecipeGUIHolder;
 import io.seekankan.github.kansky.util.ItemCreator;
+import io.seekankan.github.kansky.util.ItemStackNBTProxy;
 import io.seekankan.github.kansky.util.KanskyUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -119,24 +120,24 @@ public class ForgeRecipeGUIConfig {
         return retLore;
     }
     private static void writeAction(ItemStack itemStack,ClickAction action) {
-        NBT.modify(itemStack, nbt -> {
-            nbt.setEnum(ACTION_KEY,action);
+        NBT.modify(itemStack, ItemStackNBTProxy.class, proxy -> {
+            proxy.setForgeRecipeAction(action);
+//            nbt.setEnum(ACTION_KEY,action);
         });
     }
     public static ClickAction getAction(ItemStack itemStack) {
-        return NBT.get(itemStack,nbt -> {
-            return nbt.getEnum(ACTION_KEY,ClickAction.class);
-        });
+        //            return nbt.getEnum(ACTION_KEY,ClickAction.class);
+        return NBT.modify(itemStack,ItemStackNBTProxy.class, ItemStackNBTProxy::getForgeRecipeAction);
     }
     private static void writeForge(ItemStack itemStack,ForgeItem forgeItem) {
-        NBT.modify(itemStack, nbt -> {
-            nbt.setString(FORGE_KEY,forgeItem.getName());
+        NBT.modify(itemStack,ItemStackNBTProxy.class, proxy -> {
+            proxy.setForgeRecipeItem(forgeItem);
+//            nbt.setString(FORGE_KEY,forgeItem.getName());
         });
     }
     public static String getForge(ItemStack itemStack) {
-        return NBT.get(itemStack,nbt -> {
-            return nbt.getString(FORGE_KEY);
-        });
+        //            return nbt.getString(FORGE_KEY);
+        return NBT.modify(itemStack,ItemStackNBTProxy.class, ItemStackNBTProxy::getForgeRecipeItem);
     }
     private static ForgeItem[] getItems(Map<?,ForgeItem> map){
         ForgeItem[] items = new ForgeItem[map.size()];

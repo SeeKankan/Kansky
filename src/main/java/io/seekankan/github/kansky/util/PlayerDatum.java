@@ -8,7 +8,7 @@ import java.io.File;
 public class PlayerDatum {
     public static PlayerData pluginPlayerData = new PlayerData(new File(Kansky.getInstance().getDataFolder(),"playerdata"));
 
-    static {
+    public static void preloadData() {
         if(Config.autoSave != 0){
             pluginPlayerData.startAutoSave(Config.autoSave);
         }

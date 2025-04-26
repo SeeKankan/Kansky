@@ -5,6 +5,8 @@ import de.tr7zw.changeme.nbtapi.iface.ReadableNBT;
 import io.seekankan.github.kansky.Kansky;
 import io.seekankan.github.kansky.event.KanItemCreateEvent;
 import io.seekankan.github.kansky.util.ItemCreator;
+import io.seekankan.github.kansky.util.ItemStackNBTProxy;
+import io.seekankan.github.kansky.util.KanskyUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -48,8 +50,12 @@ public class DefaultItem implements ConfigurationSerializable {
     }
     public ItemStack create(){
         ItemStack itemStack = new ItemCreator(material).name(displayName).create();
-        NBT.modify(itemStack,nbt -> {
-            nbt.setString(ItemConfig.KANSKY_ITEM_ID,itemId);
+        NBT.modify(itemStack, ItemStackNBTProxy.class, proxy -> {
+            proxy.setKanskyItemId(itemId);
+//            nbt.setString(ItemConfig.KANSKY_ITEM_ID,itemId);
+//            nbt.mergeCompound(nbt);
+        });
+        NBT.modify(itemStack, nbt -> {
             nbt.mergeCompound(nbt);
         });
         KanItemCreateEvent callEvent = new KanItemCreateEvent(itemStack,this);
@@ -66,13 +72,13 @@ public class DefaultItem implements ConfigurationSerializable {
     public static void loadDefaultItem(){
         defMap.clear(); //clear old default item
         ConfigurationSerialization.registerClass(DefaultItem.class);
-        Kansky instance = Kansky.getInstance();
-        File file = new File(instance.getDataFolder(),"default_item.yml");
-        if(!file.exists()) {
-            instance.getLogger().info("Create default_item.yml");
-            instance.saveResource("default_item.yml",true);
-        }
-        defYAML = YamlConfiguration.loadConfiguration(file);
+//        Kansky instance = Kansky.getInstance();
+//        File file = new File(instance.getDataFolder(),"default_item.yml");
+//        if(!file.exists()) {
+//            instance.getLogger().info("Create default_item.yml");
+//            instance.saveResource("default_item.yml",true);
+//        }
+        defYAML = KanskyUtil.getConfig("default_item.yml"); //YamlConfiguration.loadConfiguration(file);
         Set<String> keys = defYAML.getKeys(false);
         keys.forEach(key -> defMap.put(key, (DefaultItem) defYAML.get(key)));
     }

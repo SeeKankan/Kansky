@@ -1,6 +1,7 @@
 AdminSword:
   ==: io.seekankan.github.kansky.kanattribute.ItemConfig
   display_name: "Test item"
+  rarity: 5
   attribute:
     damage:
       slot:
@@ -9,6 +10,7 @@ AdminSword:
 DefenseSword:
   ==: io.seekankan.github.kansky.kanattribute.ItemConfig
   display_name: "Test2 item"
+  rarity: 3
   attribute:
     defense:
       slot:
@@ -17,6 +19,7 @@ DefenseSword:
 SuperAdminSword:
   ==: io.seekankan.github.kansky.kanattribute.ItemConfig
   display_name: "Super admin sword"
+  rarity: 6
   attribute:
     damage:
       slot:
@@ -25,6 +28,7 @@ SuperAdminSword:
 AdminHat:
   ==: io.seekankan.github.kansky.kanattribute.ItemConfig
   display_name: "Admin hat"
+  rarity: 6
   attribute:
     health:
       slot:
@@ -37,3 +41,4 @@ AdminHat:
 KanGold:
   ==: io.seekankan.github.kansky.kanattribute.ItemConfig
   display_name: "Kankan's gold"
+  rarity: 2

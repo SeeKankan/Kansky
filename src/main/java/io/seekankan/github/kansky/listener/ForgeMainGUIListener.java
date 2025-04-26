@@ -42,18 +42,28 @@ public class ForgeMainGUIListener implements Listener {
         if(!(event.getWhoClicked() instanceof Player)) return;
         Player player = (Player) event.getWhoClicked();
         ItemStack itemStack = inventory.getItem(event.getSlot());
-        Integer slotRaw = ForgeMainGUIConfig.getForgeSlotByItem(itemStack);
-        if(slotRaw == null) return;
-        int slot = slotRaw;
-        ForgeMeta forgeMeta = ForgeDataUtil.getForgeMeta(player,slot);
-        if(forgeMeta.getForgeItem() == null) Forge.openRecipeGUI((Player) event.getWhoClicked(),slot,0);
-        else {
-            if(ForgeDataUtil.getEndTime(forgeMeta) > 0) return;
-            KanskyUtil.addItemOverflow(player,forgeMeta.getForgeItem()
-                    .createItemByItems(Arrays.asList(forgeMeta.getRawMaterial())));
-            ForgeDataUtil.setForgeMeta(player,slot,new ForgeMeta());
-            Forge.getForgeConfig().getMainGUIConfig().refreshInventory(player,inventory);
-        }
+        ForgeMainGUIConfig.getForgeSlotByItem(itemStack).ifPresent(slot -> {
+            ForgeMeta forgeMeta = ForgeDataUtil.getForgeMeta(player,slot);
+            if(forgeMeta.getForgeItem() == null) Forge.openRecipeGUI((Player) event.getWhoClicked(),slot,0);
+            else {
+                if(ForgeDataUtil.getEndTime(forgeMeta) > 0) return;
+                KanskyUtil.addItemOverflow(player,forgeMeta.getForgeItem()
+                        .createItemByItems(Arrays.asList(forgeMeta.getRawMaterial())));
+                ForgeDataUtil.setForgeMeta(player,slot,new ForgeMeta());
+                Forge.getForgeConfig().getMainGUIConfig().refreshInventory(player,inventory);
+            }
+        });
+//        if(slotRaw == null) return;
+//        int slot = slotRaw;
+//        ForgeMeta forgeMeta = ForgeDataUtil.getForgeMeta(player,slot);
+//        if(forgeMeta.getForgeItem() == null) Forge.openRecipeGUI((Player) event.getWhoClicked(),slot,0);
+//        else {
+//            if(ForgeDataUtil.getEndTime(forgeMeta) > 0) return;
+//            KanskyUtil.addItemOverflow(player,forgeMeta.getForgeItem()
+//                    .createItemByItems(Arrays.asList(forgeMeta.getRawMaterial())));
+//            ForgeDataUtil.setForgeMeta(player,slot,new ForgeMeta());
+//            Forge.getForgeConfig().getMainGUIConfig().refreshInventory(player,inventory);
+//        }
     }
     @EventHandler(priority = EventPriority.LOW,ignoreCancelled = true)
     public void handleDrag(InventoryDragEvent event){

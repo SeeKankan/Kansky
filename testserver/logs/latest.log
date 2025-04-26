@@ -1,195 +1,205 @@
-[10:27:24] [Server thread/INFO]: Starting minecraft server version 1.12.2
-[10:27:24] [Server thread/INFO]: Loading properties
-[10:27:24] [Server thread/INFO]: Default game type: SURVIVAL
-[10:27:24] [Server thread/INFO]: This server is running Paper version git-Paper-1620 (MC: 1.12.2) (Implementing API version 1.12.2-R0.1-SNAPSHOT)
-[10:27:24] [Server thread/INFO]: Debug logging is disabled
-[10:27:24] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[10:27:24] [Server thread/INFO]: Using 4 threads for Netty based IO
-[10:27:24] [Server thread/INFO]: Generating keypair
-[10:27:24] [Server thread/INFO]: Starting Minecraft server on *:25565
-[10:27:24] [Server thread/INFO]: Using default channel type
-[10:27:25] [Server thread/INFO]: Set PluginClassLoader as parallel capable
-[10:27:25] [Server thread/INFO]: [iConomy] Loading iConomy v6.0.10b
-[10:27:25] [Server thread/INFO]: [Vault] Loading Vault v1.7.3-b131
-[10:27:25] [Server thread/INFO]: [PlaceholderAPI] Loading PlaceholderAPI v2.11.6
-[10:27:25] [Server thread/INFO]: [ProtocolLib] Loading ProtocolLib v5.2.0-SNAPSHOT-679
-[10:27:26] [Server thread/INFO]: [MythicMobs] Loading MythicMobs v4.13.0-4912b395
-[10:27:26] [Server thread/INFO]: [LumineUtils] (io.lumine.xikage.mythicmobs.utils.) is bound to plugin MythicMobs - io.lumine.xikage.mythicmobs.MythicMobs
-[10:27:26] [Server thread/INFO]: [Kansky] Loading Kansky v1.0
-[10:27:26] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[10:27:26] [Server thread/INFO]: [Vault] Enabling Vault v1.7.3-b131
-[10:27:26] [Server thread/WARN]: [Vault] iConomy - If you are using Flatfile storage be aware that versions 6, 7 and 8 have a CRITICAL bug which can wipe ALL iconomy data.
-[10:27:26] [Server thread/WARN]: [Vault] if you're using Votifier, or any other plugin which handles economy data in a threaded manner your server is at risk!
-[10:27:26] [Server thread/WARN]: [Vault] it is highly suggested to use SQL with iCo6 or to use an alternative economy plugin!
-[10:27:26] [Server thread/INFO]: [Vault] [Economy] iConomy 6 found: Waiting
-[10:27:26] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
-[10:27:26] [Server thread/INFO]: [Vault] Enabled Version 1.7.3-b131
-[10:27:26] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.2.0-SNAPSHOT-679
-[10:27:26] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
-[10:27:26] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
-[10:27:26] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
-[10:27:26] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
-[10:27:26] [Server thread/INFO]: **** Beginning UUID conversion, this may take A LONG time ****
-[10:27:26] [Server thread/INFO]: Preparing level "world"
-[10:27:26] [Server thread/INFO]: -------- World Settings For [world] --------
-[10:27:26] [Server thread/INFO]: Arrow Despawn Rate: 1200
-[10:27:26] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[10:27:26] [Server thread/INFO]: Item Despawn Rate: 6000
-[10:27:26] [Server thread/INFO]: Item Merge Radius: 2.5
-[10:27:26] [Server thread/INFO]: View Distance: 10
-[10:27:26] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[10:27:26] [Server thread/INFO]: Experience Merge Radius: 3.0
-[10:27:26] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[10:27:26] [Server thread/INFO]: Structure Info Saving: true
-[10:27:26] [Server thread/INFO]: Mob Spawn Range: 4
-[10:27:26] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16 / Tiv true
-[10:27:26] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1
-[10:27:26] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
-[10:27:26] [Server thread/INFO]: Random Lighting Updates: false
-[10:27:26] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Cane Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Melon Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Vine Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Max TNT Explosions: 100
-[10:27:26] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[10:27:26] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617 Monument: 10387313 Slime: 987234911
-[10:27:26] [Server thread/INFO]: -------- World Settings For [world_nether] --------
-[10:27:26] [Server thread/INFO]: Arrow Despawn Rate: 1200
-[10:27:26] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[10:27:26] [Server thread/INFO]: Item Despawn Rate: 6000
-[10:27:26] [Server thread/INFO]: Item Merge Radius: 2.5
-[10:27:26] [Server thread/INFO]: View Distance: 10
-[10:27:26] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[10:27:26] [Server thread/INFO]: Experience Merge Radius: 3.0
-[10:27:26] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[10:27:26] [Server thread/INFO]: Structure Info Saving: true
-[10:27:26] [Server thread/INFO]: Mob Spawn Range: 4
-[10:27:26] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16 / Tiv true
-[10:27:26] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1
-[10:27:26] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
-[10:27:26] [Server thread/INFO]: Random Lighting Updates: false
-[10:27:26] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Cane Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Melon Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Vine Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Max TNT Explosions: 100
-[10:27:26] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[10:27:26] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617 Monument: 10387313 Slime: 987234911
-[10:27:26] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
-[10:27:26] [Server thread/INFO]: Arrow Despawn Rate: 1200
-[10:27:26] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
-[10:27:26] [Server thread/INFO]: Item Despawn Rate: 6000
-[10:27:26] [Server thread/INFO]: Item Merge Radius: 2.5
-[10:27:26] [Server thread/INFO]: View Distance: 10
-[10:27:26] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
-[10:27:26] [Server thread/INFO]: Experience Merge Radius: 3.0
-[10:27:26] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
-[10:27:26] [Server thread/INFO]: Structure Info Saving: true
-[10:27:26] [Server thread/INFO]: Mob Spawn Range: 4
-[10:27:26] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16 / Tiv true
-[10:27:26] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1
-[10:27:26] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
-[10:27:26] [Server thread/INFO]: Random Lighting Updates: false
-[10:27:26] [Server thread/INFO]: Cactus Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Cane Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Melon Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Mushroom Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Sapling Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Wheat Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: NetherWart Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Vine Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Cocoa Growth Modifier: 100%
-[10:27:26] [Server thread/INFO]: Max TNT Explosions: 100
-[10:27:26] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
-[10:27:26] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617 Monument: 10387313 Slime: 987234911
-[10:27:26] [Server thread/INFO]: Preparing start region for level 0 (Seed: -332199439273604455)
-[10:27:27] [Server thread/INFO]: Preparing start region for level 1 (Seed: -332199439273604455)
-[10:27:27] [Server thread/INFO]: Preparing start region for level 2 (Seed: -332199439273604455)
-[10:27:28] [Server thread/INFO]: [iConomy] Enabling iConomy v6.0.10b
-[10:27:28] [Server thread/INFO]: [iConomy - Celty] Enabled (15 ms)
-[10:27:28] [Server thread/INFO]: [Vault] [Economy] iConomy 6 hooked.
-[10:27:28] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[10:27:28] [Thread-6/INFO]: [iConomy - Celty] Purged accounts with default balance.
-[10:27:28] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[10:27:28] [Server thread/INFO]: [MythicMobs] Enabling MythicMobs v4.13.0-4912b395
-[10:27:28] [Server thread/ERROR]: [MythicMobs] Plugin MythicMobs v4.13.0-4912b395 has failed to register events for class io.lumine.xikage.mythicmobs.adapters.bukkit.listeners.MobListeners because org/bukkit/event/entity/EntityTransformEvent does not exist.
-[10:27:28] [Server thread/INFO]: [MythicMobs] Loading MythicMobs for Paper (MC: 1.12.2)...[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] The server is running PaperSpigot; enabled PaperSpigot exclusive functionality[0m
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 63 ms to scan 1 urls, producing 3 keys and 21 values 
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 10 ms to scan 1 urls, producing 3 keys and 18 values 
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 44 ms to scan 15 urls, producing 0 keys and 0 values 
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 8 ms to scan 1 urls, producing 3 keys and 9 values 
-[10:27:28] [Server thread/INFO]: [MythicMobs] MythicMobs PlaceholderAPI Support has been enabled![0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] Loaded ProtocolLib packet handlers[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] MythicMobs ProtocolLib Support has been enabled![0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] MythicMobs Vault Support has been enabled![0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] Loading Mob Registry...[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] Base directory D:\Desktop\Oscar\Kansky\testserver\plugins\MythicMobs\SavedData
-[10:27:28] [Server thread/INFO]: [MythicMobs] Module directory D:\Desktop\Oscar\Kansky\testserver\plugins\MythicMobs\SavedData\worlds
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 18 ms to scan 1 urls, producing 11 keys and 363 values 
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 30 ms to scan 1 urls, producing 25 keys and 703 values 
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 11 ms to scan 1 urls, producing 6 keys and 122 values 
-[10:27:28] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 7 ms to scan 1 urls, producing 2 keys and 10 values 
-[10:27:28] [Server thread/INFO]: [MythicMobs] [36mLOADED[0m
-[10:27:28] [Server thread/WARN]: [MythicMobs] ✗[33m Config Error for Item '[4mKingsCrown[0m[33m' in 'ExampleItems.yml': [37mMaterial type 'GOLDEN_HELMET' not found[0m[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 5 mobs.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 3 vanilla mob overrides.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 0 mob stacks.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 3 skills.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 2 random spawns.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 3 mythic items.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 2 drop tables.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 0 mob spawners.[0m
-[10:27:28] [Server thread/INFO]: [MythicMobs] MythicMobs configuration file loaded successfully.[0m
-[10:27:29] [Server thread/INFO]: [MythicMobs] Started up bStats Metrics[0m
-[10:27:29] [Server thread/INFO]: [MythicMobs] [32m✓ MythicMobs v4.13.0 (build 4912b395) has been successfully loaded![0m[0m
-[10:27:29] [Server thread/INFO]: [Kansky] Enabling Kansky v1.0
-[10:27:29] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: v1_12_R1! Trying to find NMS support
-[10:27:29] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC1_12_R1' loaded!
-[10:27:29] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'Kansky' to create a bStats instance!
-[10:27:29] [Server thread/INFO]: hello test!
-[10:27:29] [Server thread/INFO]: I am live in plugins\Kansky\js\test
-[10:27:29] [Server thread/INFO]: hello test2!
-[10:27:29] [Server thread/INFO]: [Kansky] Javascript load success.
-[10:27:29] [Server thread/INFO]: [Kansky] register placeholder expansion now.
-[10:27:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: kanskyattribute [1.0]
-[10:27:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: kanskyslayer [1.0]
-[10:27:29] [Server thread/INFO]: [Kansky] Loading plugin takes 374 millisecond
-[10:27:29] [Server thread/INFO]: Done (3.150s)! For help, type "help" or "?"
-[10:27:29] [Server thread/INFO]: Timings Reset
-[10:27:29] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[10:27:29] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[10:27:29] [Craft Scheduler Thread - 1/INFO]: [Vault] Checking for Updates ... 
-[10:27:30] [Craft Scheduler Thread - 1/INFO]: [Vault] No new version available
-[10:27:31] [Server thread/INFO]: [ProtocolLib] The updater found an update: 5.3.0 (Running 5.2.0-SNAPSHOT-679). Download at https://www.spigotmc.org/resources/protocollib.1997/
-[10:27:36] [Server thread/INFO]: Stopping the server
-[10:27:36] [Server thread/INFO]: Stopping server
-[10:27:36] [Server thread/INFO]: [Kansky] Disabling Kansky v1.0
-[10:27:36] [Server thread/INFO]: [MythicMobs] Disabling MythicMobs v4.13.0-4912b395
-[10:27:36] [Server thread/INFO]: [MythicMobs] Disabling Mythic Mobs...[0m
-[10:27:36] [Server thread/INFO]: [MythicMobs] All active settings have been saved.[0m
-[10:27:36] [Server thread/INFO]: [MythicMobs] [36mUNLOADED[0m
-[10:27:36] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.2.0-SNAPSHOT-679
-[10:27:36] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[10:27:36] [Server thread/INFO]: [Vault] Disabling Vault v1.7.3-b131
-[10:27:36] [Server thread/INFO]: [iConomy] Disabling iConomy v6.0.10b
-[10:27:36] [Server thread/INFO]: [iConomy] Closing general data...
-[10:27:36] [Server thread/INFO]: [iConomy] Disabled. (0 ms)
-[10:27:36] [Server thread/INFO]: Saving players
-[10:27:36] [Server thread/INFO]: Saving worlds
-[10:27:36] [Server thread/INFO]: Saving chunks for level 'world'/overworld
-[10:27:36] [Server thread/INFO]: Saving chunks for level 'world_nether'/the_nether
-[10:27:36] [Server thread/INFO]: Saving chunks for level 'world_the_end'/the_end
+[11:00:13] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[11:00:13] [Server thread/INFO]: Loading properties
+[11:00:13] [Server thread/INFO]: Default game type: SURVIVAL
+[11:00:13] [Server thread/INFO]: This server is running Paper version git-Paper-1620 (MC: 1.12.2) (Implementing API version 1.12.2-R0.1-SNAPSHOT)
+[11:00:13] [Server thread/INFO]: Debug logging is disabled
+[11:00:13] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[11:00:13] [Server thread/INFO]: Using 4 threads for Netty based IO
+[11:00:13] [Server thread/INFO]: Generating keypair
+[11:00:13] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:00:13] [Server thread/INFO]: Using default channel type
+[11:00:14] [Server thread/INFO]: Set PluginClassLoader as parallel capable
+[11:00:14] [Server thread/INFO]: [iConomy] Loading iConomy v6.0.10b
+[11:00:14] [Server thread/INFO]: [Vault] Loading Vault v1.7.3-b131
+[11:00:14] [Server thread/INFO]: [PlaceholderAPI] Loading PlaceholderAPI v2.11.6
+[11:00:14] [Server thread/INFO]: [ProtocolLib] Loading ProtocolLib v5.2.0-SNAPSHOT-679
+[11:00:14] [Server thread/INFO]: [MythicMobs] Loading MythicMobs v4.13.0-4912b395
+[11:00:14] [Server thread/INFO]: [LumineUtils] (io.lumine.xikage.mythicmobs.utils.) is bound to plugin MythicMobs - io.lumine.xikage.mythicmobs.MythicMobs
+[11:00:14] [Server thread/INFO]: [Kansky] Loading Kansky v1.0
+[11:00:14] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[11:00:14] [Server thread/INFO]: [Vault] Enabling Vault v1.7.3-b131
+[11:00:14] [Server thread/WARN]: [Vault] iConomy - If you are using Flatfile storage be aware that versions 6, 7 and 8 have a CRITICAL bug which can wipe ALL iconomy data.
+[11:00:14] [Server thread/WARN]: [Vault] if you're using Votifier, or any other plugin which handles economy data in a threaded manner your server is at risk!
+[11:00:14] [Server thread/WARN]: [Vault] it is highly suggested to use SQL with iCo6 or to use an alternative economy plugin!
+[11:00:14] [Server thread/INFO]: [Vault] [Economy] iConomy 6 found: Waiting
+[11:00:14] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
+[11:00:14] [Server thread/INFO]: [Vault] Enabled Version 1.7.3-b131
+[11:00:14] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v5.2.0-SNAPSHOT-679
+[11:00:14] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[11:00:14] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[11:00:14] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[11:00:14] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[11:00:14] [Server thread/INFO]: **** Beginning UUID conversion, this may take A LONG time ****
+[11:00:14] [Server thread/INFO]: Preparing level "world"
+[11:00:14] [Server thread/INFO]: -------- World Settings For [world] --------
+[11:00:14] [Server thread/INFO]: Arrow Despawn Rate: 1200
+[11:00:14] [Server thread/INFO]: Item Despawn Rate: 6000
+[11:00:14] [Server thread/INFO]: Item Merge Radius: 2.5
+[11:00:14] [Server thread/INFO]: View Distance: 10
+[11:00:14] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[11:00:14] [Server thread/INFO]: Experience Merge Radius: 3.0
+[11:00:14] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[11:00:14] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[11:00:14] [Server thread/INFO]: Mob Spawn Range: 4
+[11:00:14] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
+[11:00:14] [Server thread/INFO]: Random Lighting Updates: false
+[11:00:14] [Server thread/INFO]: Structure Info Saving: true
+[11:00:14] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[11:00:14] [Server thread/INFO]: Max TNT Explosions: 100
+[11:00:14] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1
+[11:00:14] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Cane Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Melon Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Vine Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[11:00:14] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16 / Tiv true
+[11:00:14] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617 Monument: 10387313 Slime: 987234911
+[11:00:15] [Server thread/INFO]: -------- World Settings For [world_nether] --------
+[11:00:15] [Server thread/INFO]: Arrow Despawn Rate: 1200
+[11:00:15] [Server thread/INFO]: Item Despawn Rate: 6000
+[11:00:15] [Server thread/INFO]: Item Merge Radius: 2.5
+[11:00:15] [Server thread/INFO]: View Distance: 10
+[11:00:15] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[11:00:15] [Server thread/INFO]: Experience Merge Radius: 3.0
+[11:00:15] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[11:00:15] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[11:00:15] [Server thread/INFO]: Mob Spawn Range: 4
+[11:00:15] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
+[11:00:15] [Server thread/INFO]: Random Lighting Updates: false
+[11:00:15] [Server thread/INFO]: Structure Info Saving: true
+[11:00:15] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[11:00:15] [Server thread/INFO]: Max TNT Explosions: 100
+[11:00:15] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1
+[11:00:15] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Cane Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Melon Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Vine Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16 / Tiv true
+[11:00:15] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617 Monument: 10387313 Slime: 987234911
+[11:00:15] [Server thread/INFO]: -------- World Settings For [world_the_end] --------
+[11:00:15] [Server thread/INFO]: Arrow Despawn Rate: 1200
+[11:00:15] [Server thread/INFO]: Item Despawn Rate: 6000
+[11:00:15] [Server thread/INFO]: Item Merge Radius: 2.5
+[11:00:15] [Server thread/INFO]: View Distance: 10
+[11:00:15] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[11:00:15] [Server thread/INFO]: Experience Merge Radius: 3.0
+[11:00:15] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[11:00:15] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[11:00:15] [Server thread/INFO]: Mob Spawn Range: 4
+[11:00:15] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Other 64
+[11:00:15] [Server thread/INFO]: Random Lighting Updates: false
+[11:00:15] [Server thread/INFO]: Structure Info Saving: true
+[11:00:15] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[11:00:15] [Server thread/INFO]: Max TNT Explosions: 100
+[11:00:15] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1
+[11:00:15] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Cane Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Melon Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Vine Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[11:00:15] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Mi 16 / Tiv true
+[11:00:15] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Feature: 14357617 Monument: 10387313 Slime: 987234911
+[11:00:15] [Server thread/INFO]: Preparing start region for level 0 (Seed: -332199439273604455)
+[11:00:15] [Server thread/INFO]: Preparing start region for level 1 (Seed: -332199439273604455)
+[11:00:16] [Server thread/INFO]: Preparing start region for level 2 (Seed: -332199439273604455)
+[11:00:16] [Server thread/INFO]: [iConomy] Enabling iConomy v6.0.10b
+[11:00:16] [Server thread/INFO]: [iConomy - Celty] Enabled (11 ms)
+[11:00:16] [Server thread/INFO]: [Vault] [Economy] iConomy 6 hooked.
+[11:00:16] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[11:00:16] [Thread-6/INFO]: [iConomy - Celty] Purged accounts with default balance.
+[11:00:16] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[11:00:16] [Server thread/INFO]: [MythicMobs] Enabling MythicMobs v4.13.0-4912b395
+[11:00:16] [Server thread/ERROR]: [MythicMobs] Plugin MythicMobs v4.13.0-4912b395 has failed to register events for class io.lumine.xikage.mythicmobs.adapters.bukkit.listeners.MobListeners because org/bukkit/event/entity/EntityTransformEvent does not exist.
+[11:00:16] [Server thread/INFO]: [MythicMobs] Loading MythicMobs for Paper (MC: 1.12.2)...[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] The server is running PaperSpigot; enabled PaperSpigot exclusive functionality[0m
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 38 ms to scan 1 urls, producing 3 keys and 21 values 
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 9 ms to scan 1 urls, producing 3 keys and 18 values 
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 49 ms to scan 15 urls, producing 0 keys and 0 values 
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 8 ms to scan 1 urls, producing 3 keys and 9 values 
+[11:00:16] [Server thread/INFO]: [MythicMobs] MythicMobs PlaceholderAPI Support has been enabled![0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] Loaded ProtocolLib packet handlers[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] MythicMobs ProtocolLib Support has been enabled![0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] MythicMobs Vault Support has been enabled![0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] Loading Mob Registry...[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] Base directory D:\Desktop\Oscar\Kansky\testserver\plugins\MythicMobs\SavedData
+[11:00:16] [Server thread/INFO]: [MythicMobs] Module directory D:\Desktop\Oscar\Kansky\testserver\plugins\MythicMobs\SavedData\worlds
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 16 ms to scan 1 urls, producing 11 keys and 363 values 
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 21 ms to scan 1 urls, producing 25 keys and 703 values 
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 10 ms to scan 1 urls, producing 6 keys and 122 values 
+[11:00:16] [Server thread/INFO]: [io.lumine.xikage.mythicmobs.util.reflections.Reflections] Reflections took 7 ms to scan 1 urls, producing 2 keys and 10 values 
+[11:00:16] [Server thread/INFO]: [MythicMobs] [36mLOADED[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 5 mobs.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 3 vanilla mob overrides.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 0 mob stacks.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 3 skills.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 2 random spawns.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 3 mythic items.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 2 drop tables.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] [32m✓[37m Loaded 0 mob spawners.[0m
+[11:00:16] [Server thread/INFO]: [MythicMobs] MythicMobs configuration file loaded successfully.[0m
+[11:00:17] [Server thread/INFO]: [MythicMobs] Started up bStats Metrics[0m
+[11:00:17] [Server thread/INFO]: [MythicMobs] [32m✓ MythicMobs v4.13.0 (build 4912b395) has been successfully loaded![0m[0m
+[11:00:17] [Server thread/INFO]: [Kansky] Enabling Kansky v1.0
+[11:00:17] [Server thread/INFO]: [NBTAPI] [NBTAPI] Found Minecraft: v1_12_R1! Trying to find NMS support
+[11:00:17] [Server thread/INFO]: [NBTAPI] [NBTAPI] NMS support 'MC1_12_R1' loaded!
+[11:00:17] [Server thread/INFO]: [NBTAPI] [NBTAPI] Using the plugin 'Kansky' to create a bStats instance!
+[11:00:17] [Server thread/INFO]: hello test!
+[11:00:17] [Server thread/INFO]: I am live in plugins\Kansky\js\test
+[11:00:17] [Server thread/INFO]: hello test2!
+[11:00:17] [Server thread/INFO]: [Kansky] Javascript load success.
+[11:00:17] [Server thread/INFO]: [Kansky] register placeholder expansion now.
+[11:00:17] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: kanskyattribute [1.0]
+[11:00:17] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: kanskyslayer [1.0]
+[11:00:17] [Server thread/INFO]: [Kansky] Loading plugin takes 319 millisecond
+[11:00:17] [Server thread/INFO]: Done (2.443s)! For help, type "help" or "?"
+[11:00:17] [Server thread/INFO]: Timings Reset
+[11:00:17] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[11:00:17] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[11:00:17] [Craft Scheduler Thread - 2/INFO]: [Vault] Checking for Updates ... 
+[11:00:18] [Craft Scheduler Thread - 2/INFO]: [Vault] No new version available
+[11:01:01] [User Authenticator #1/INFO]: UUID of player Superkankan is 56d80c50-ec5e-348f-813b-03141a4831d3
+[11:01:02] [Server thread/INFO]: Superkankan[/127.0.0.1:53337] logged in with entity id 113 at ([world]191.69999998807907, 66.0, 205.0450070209445)
+[11:02:26] [Server thread/INFO]: Superkankan issued server command: /ksstate
+[11:02:34] [Server thread/INFO]: Superkankan issued server command: /ks
+[11:02:41] [Server thread/INFO]: Superkankan issued server command: /ks state
+[11:02:56] [Server thread/INFO]: Superkankan issued server command: /kansky:itemnbt
+[11:03:28] [Server thread/INFO]: Superkankan issued server command: /gamemode creative
+[11:03:28] [Server thread/INFO]: [Superkankan: Set own game mode to Creative Mode]
+[11:03:48] [Server thread/INFO]: Superkankan issued server command: /gamemode survival
+[11:03:48] [Server thread/INFO]: [Superkankan: Set own game mode to Survival Mode]
+[11:03:49] [Server thread/INFO]: Superkankan lost connection: Disconnected
+[11:03:49] [Server thread/INFO]: Superkankan left the game
+[11:03:52] [Server thread/INFO]: Stopping the server
+[11:03:52] [Server thread/INFO]: Stopping server
+[11:03:52] [Server thread/INFO]: [Kansky] Disabling Kansky v1.0
+[11:03:52] [Server thread/INFO]: [MythicMobs] Disabling MythicMobs v4.13.0-4912b395
+[11:03:52] [Server thread/INFO]: [MythicMobs] Disabling Mythic Mobs...[0m
+[11:03:52] [Server thread/INFO]: [MythicMobs] All active settings have been saved.[0m
+[11:03:52] [Server thread/INFO]: [MythicMobs] [36mUNLOADED[0m
+[11:03:52] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v5.2.0-SNAPSHOT-679
+[11:03:52] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[11:03:52] [Server thread/INFO]: [Vault] Disabling Vault v1.7.3-b131
+[11:03:52] [Server thread/INFO]: [iConomy] Disabling iConomy v6.0.10b
+[11:03:52] [Server thread/INFO]: [iConomy] Closing general data...
+[11:03:52] [Server thread/INFO]: [iConomy] Disabled. (0 ms)
+[11:03:52] [Server thread/INFO]: Saving players
+[11:03:52] [Server thread/INFO]: Saving worlds
+[11:03:52] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[11:03:53] [Server thread/INFO]: Saving chunks for level 'world_nether'/the_nether
+[11:03:53] [Server thread/INFO]: Saving chunks for level 'world_the_end'/the_end

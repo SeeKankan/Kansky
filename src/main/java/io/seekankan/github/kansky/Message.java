@@ -1,6 +1,7 @@
 package io.seekankan.github.kansky;
 
 import io.seekankan.github.kansky.papi.Papi;
+import io.seekankan.github.kansky.util.KanskyUtil;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -38,13 +39,13 @@ public enum Message {
 
     private static YamlConfiguration messages;
     public static void loadMessage() {
-        Kansky instance = Kansky.getInstance();
-        File file = new File(instance.getDataFolder(),"message.yml");
-        if(!file.exists()) {
-            instance.getLogger().info("Create message.yml");
-            instance.saveResource("message.yml",true);
-        }
-        messages = YamlConfiguration.loadConfiguration(file);
+//        Kansky instance = Kansky.getInstance();
+//        File file = new File(instance.getDataFolder(),"message.yml");
+//        if(!file.exists()) {
+//            instance.getLogger().info("Create message.yml");
+//            instance.saveResource("message.yml",true);
+//        }
+        messages = KanskyUtil.getConfig("message.yml"); // YamlConfiguration.loadConfiguration(file);
     }
     public String getMessage() {
         return messages.getString(this.key);

@@ -1,0 +1,24 @@
+1:
+  ==: io.seekankan.github.kansky.kanattribute.Rarity
+  id: 1
+  display_name: "COMMON"
+2:
+  ==: io.seekankan.github.kansky.kanattribute.Rarity
+  id: 2
+  display_name: "UNCOMMON"
+3:
+  ==: io.seekankan.github.kansky.kanattribute.Rarity
+  id: 3
+  display_name: "RARE"
+4:
+  ==: io.seekankan.github.kansky.kanattribute.Rarity
+  id: 4
+  display_name: "EPIC"
+5:
+  ==: io.seekankan.github.kansky.kanattribute.Rarity
+  id: 5
+  display_name: "LEGENDARY"
+6:
+  ==: io.seekankan.github.kansky.kanattribute.Rarity
+  id: 6
+  display_name: "MYTHIC"
