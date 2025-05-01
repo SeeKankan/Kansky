@@ -3,8 +3,6 @@ package io.seekankan.github.kansky.kanattribute;
 import de.tr7zw.changeme.nbtapi.NBT;
 import io.seekankan.github.kansky.util.ItemStackNBTProxy;
 import io.seekankan.github.kansky.util.KanskyUtil;
-import io.seekankan.github.kanutil.util.KanCollections;
-import io.seekankan.github.kanutil.util.Maps;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -31,28 +29,27 @@ public class ItemConfig implements ConfigurationSerializable {
     }
     //{===io.seekankan.github.kansky.kanattribute.ItemConfig, attribute={damage={slot=[MAINHAND], value=100}}}
     @Contract("_ -> new")
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused","unchecked"})
     public static @NotNull ItemConfig deserialize(@NotNull Map<String,Object> map) {
-        @SuppressWarnings("unchecked")
-        Map<String, Object> attrsMap = Maps.checkType(
-                (Map<String, Object>) map.getOrDefault("attribute",new HashMap<>()),
-                String.class,
-                Object.class
-        );
+//        @SuppressWarnings("unchecked")
+//        Map<String, Object> attrsMap = Maps.checkType(
+//                (Map<String, Object>) map.getOrDefault("attribute",new HashMap<>()),
+//                String.class,
+//                Object.class
+//        );
+        Map<String, Object> attrsMap = (Map<String, Object>) map.getOrDefault("attribute",new HashMap<>());
         LinkedList<AttributeConfig> attributeConfig = new LinkedList<>();
         for(String key : attrsMap.keySet()) {
-            String attrName = key;
-            @SuppressWarnings("rawtypes")
-            Map attrConfMap = (Map) attrsMap.get(key);
-            @SuppressWarnings("unchecked")
+            Map<String,Object> attrConfMap = (Map<String,Object>) attrsMap.get(key);
             List<Slot> slots = Slot.valuesOf((List<String>) attrConfMap.get("slot"));
             double value = Double.parseDouble(attrConfMap.get("value").toString());
-            attributeConfig.add(new AttributeConfig(attrName,slots,value));
+            attributeConfig.add(new AttributeConfig(key,slots,value));
         }
-        String displayName = map.getOrDefault("display_name","UNNAME").toString();
+        String displayName = Objects.requireNonNull(map.get("display_name"),"Item display name cannot be null!").toString();
         Rarity rarity = Rarity.getRarity((Integer) map.getOrDefault("rarity","1"));
-        @SuppressWarnings("unchecked")
-        List<String> info = (List<String>) map.getOrDefault("info",Collections.emptyList());
+        List<String> info = Collections.unmodifiableList(
+                (List<String>) map.getOrDefault("info",Collections.emptyList())
+        );
         return new ItemConfig(attributeConfig.toArray(new AttributeConfig[0]),displayName,rarity,info);
     }
     @Override

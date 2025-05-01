@@ -46,4 +46,17 @@ public interface ItemStackNBTProxy extends NBTProxy {
         setForgeRecipeItem(forgeItem.getName());
     }
 
+    //Runs: return nbt.hasBoolean(WRITE_ITEM_CLICK_CLOSE);
+    boolean hasGUIConfigClose();
+    //Runs: return nbt.getString(WRITE_ITEM_COMMAND,command);
+    String getGUIConfigCommand();
+    //Runs: nbt.setString(WRITE_ITEM_COMMAND,command);
+    void setGUIConfigCommand(String command);
+    //Runs: return nbt.getBoolean(WRITE_ITEM_CLICK_CLOSE,doCloseAfterClick);
+    boolean getGUIConfigClose();
+    default boolean getGUIConfigCloseSafe(){
+        return hasGUIConfigClose() && getGUIConfigClose();
+    }
+    //Runs: nbt.setBoolean(WRITE_ITEM_CLICK_CLOSE,doCloseAfterClick)
+    void setGUIConfigClose(boolean doCloseAfterClick);
 }

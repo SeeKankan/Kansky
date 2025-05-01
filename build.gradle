@@ -13,7 +13,8 @@ shadowJar {
     relocate("de.tr7zw.changeme.nbtapi", "io.seekankan.github.kansky.nbtapi")
 }
 task copyPlugin(type:Copy) {
-    from file("${rootDir}/build/libs/kansky-1.0-SNAPSHOT-all.jar")
+//    from file("${rootDir}/build/libs/kansky-1.0-SNAPSHOT-all.jar")
+    from file("${rootDir}/build/libs/kansky-" + version + "-all.jar")
     into file("${rootDir}/testserver/plugins")
 }
 

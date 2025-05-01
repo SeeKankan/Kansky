@@ -2,6 +2,7 @@ package io.seekankan.github.kansky.listener;
 
 import de.tr7zw.changeme.nbtapi.NBT;
 import io.seekankan.github.kansky.inventory.GUIConfig;
+import io.seekankan.github.kansky.util.ItemStackNBTProxy;
 import io.seekankan.github.kansky.util.KanskyUtil;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -23,9 +24,19 @@ public class ExeCommandGUIListener implements Listener {
     private static void performCommand(HumanEntity human,ItemStack itemStack) {
         if(!(human instanceof Player)) return;
         if(!KanskyUtil.isItemStack(itemStack)) return;
-        NBT.get(itemStack,nbt -> {
-            String command = nbt.getString(GUIConfig.WRITE_ITEM_COMMAND);
-            Boolean clickWhenClose = nbt.getBoolean(GUIConfig.WRITE_ITEM_CLICK_CLOSE);
+//        NBT.get(itemStack,nbt -> {
+//            String command = nbt.getString(GUIConfig.WRITE_ITEM_COMMAND);
+//            Boolean clickWhenClose = nbt.getBoolean(GUIConfig.WRITE_ITEM_CLICK_CLOSE);
+//            if(!(command == null || "".equals(command))) {
+//                ((Player)(human)).performCommand(command);
+//            }
+//            if(clickWhenClose) {
+//                human.closeInventory();
+//            }
+//        });
+        NBT.modify(itemStack, ItemStackNBTProxy.class, proxy -> {
+            String command = proxy.getGUIConfigCommand();
+            boolean clickWhenClose = proxy.getGUIConfigCloseSafe();
             if(!(command == null || "".equals(command))) {
                 ((Player)(human)).performCommand(command);
             }
