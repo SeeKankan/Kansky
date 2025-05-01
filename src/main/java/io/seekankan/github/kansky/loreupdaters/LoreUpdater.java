@@ -1,10 +1,12 @@
 package io.seekankan.github.kansky.loreupdaters;
 
+import io.seekankan.github.kansky.event.KanUpdateLoreEvent;
 import io.seekankan.github.kansky.kanattribute.AttributeFormat;
 import io.seekankan.github.kansky.kanattribute.ItemConfig;
 import io.seekankan.github.kansky.kanattribute.Slot;
 import io.seekankan.github.kansky.util.KanskyUtil;
 import io.seekankan.github.kanutil.util.Maps;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -79,6 +81,8 @@ public class LoreUpdater {
             }
             lore.addAll(getter.apply(player, itemStack));
         });
+        KanUpdateLoreEvent event = new KanUpdateLoreEvent(player,itemStack,lore);
+        Bukkit.getPluginManager().callEvent(event);
         return lore;
     }
 
