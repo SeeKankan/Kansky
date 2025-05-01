@@ -6,14 +6,13 @@ import io.seekankan.github.kansky.inventory.ForgeMainGUIHolder;
 import io.seekankan.github.kansky.util.ItemCreator;
 import io.seekankan.github.kansky.util.ItemStackNBTProxy;
 import io.seekankan.github.kansky.util.KanskyUtil;
-import io.seekankan.github.kanutil.string.PlaceHolder;
+import io.seekankan.github.kanutil.string.Placeholder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -28,8 +27,8 @@ public class ForgeMainGUIConfig {
     private String title;
 //    private List<String> rawLore;
 //    private List<String> noForgeRawLore;
-    private PlaceHolder[] rawLorePH;
-    private PlaceHolder[] noForgeRawLorePH;
+    private Placeholder[] rawLorePH;
+    private Placeholder[] noForgeRawLorePH;
 
     public ForgeMainGUIConfig(int size, Map<Integer, Material> forgeSlot, Map<Integer, Integer> forgeSlots, ItemStack fill, String title, List<String> rawLore, List<String> noForgeRawLore) {
         this.size = size;
@@ -39,13 +38,13 @@ public class ForgeMainGUIConfig {
         this.title = title;
 //        this.rawLore = rawLore;
 //        this.noForgeRawLore = noForgeRawLore;
-        this.rawLorePH = new PlaceHolder[rawLore.size()];
-        this.noForgeRawLorePH = new PlaceHolder[noForgeRawLore.size()];
+        this.rawLorePH = new Placeholder[rawLore.size()];
+        this.noForgeRawLorePH = new Placeholder[noForgeRawLore.size()];
         for(int i = 0;i < rawLorePH.length;i++) {
-            rawLorePH[i] = new PlaceHolder(rawLore.get(i),'{','}');
+            rawLorePH[i] = new Placeholder(rawLore.get(i),'{','}');
         }
         for(int i = 0;i < noForgeRawLorePH.length;i++) {
-            noForgeRawLorePH[i] = new PlaceHolder(noForgeRawLore.get(i),'{','}');
+            noForgeRawLorePH[i] = new Placeholder(noForgeRawLore.get(i),'{','}');
         }
     }
 
@@ -100,19 +99,19 @@ public class ForgeMainGUIConfig {
     }
     private List<String> getDefFormatLore(String slot){
         ArrayList<String> lore = new ArrayList<>(noForgeRawLorePH.length);
-        for (PlaceHolder ph : noForgeRawLorePH) {
+        for (Placeholder ph : noForgeRawLorePH) {
             lore.add(formatString(ph, slot, "{item}", "{time}"));
         }
         return lore;
     }
     private List<String> getFormatLore(String slot,String item,String time){
         ArrayList<String> lore = new ArrayList<>(rawLorePH.length);
-        for (PlaceHolder ph : rawLorePH) {
+        for (Placeholder ph : rawLorePH) {
             lore.add(formatString(ph, slot, item, time));
         }
         return lore;
     }
-    private static String formatString(PlaceHolder ph,String slot,String item,String time){
+    private static String formatString(Placeholder ph, String slot, String item, String time){
         return ph.get(new HashMap<String,String>(){{
             put("slot",slot);
             put("item",item);

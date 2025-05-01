@@ -10,12 +10,14 @@ import io.seekankan.github.kansky.inventory.GUI;
 import io.seekankan.github.kansky.js.JS;
 import io.seekankan.github.kansky.kanattribute.*;
 import io.seekankan.github.kansky.listener.*;
-import io.seekankan.github.kansky.loreupdaters.LoreUpdaters;
+import io.seekankan.github.kansky.loreupdaters.LoreUpdater;
 import io.seekankan.github.kansky.mythicmobs.MythicMobsHelper;
 import io.seekankan.github.kansky.papi.Papi;
 import io.seekankan.github.kansky.util.PlayerDatum;
 import org.bukkit.Bukkit;
+import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -76,6 +78,7 @@ public class Kansky extends JavaPlugin {
         Message.loadMessage();
         saveDefaultConfig();
         Config.loadConfig();
+        Slot.loadSlotName();
         AttributeFormat.loadAttributeFormat();
         Rarity.loadItemConfig();
         ItemConfig.loadItemConfig();
@@ -86,7 +89,7 @@ public class Kansky extends JavaPlugin {
         GUI.loadGui();
         Forge.loadForge();
         Forge.getForgeConfig().getRecipeGUIConfig().initShowRecipe();
-        LoreUpdaters.loadLoreUpdater();
+        LoreUpdater.loadLoreUpdater();
         new UpdateForgeMainGUIListener().runTaskTimer(this,0,Config.refreshCooldown);
         if(Bukkit.getPluginManager().isPluginEnabled("MythicMobs")) MythicMobsHelper.loadMythicMobs();
         JS.loadJS();
@@ -105,6 +108,7 @@ public class Kansky extends JavaPlugin {
                 new StateGUIListener(),
                 new ExeCommandGUIListener(),
                 new DropProtectListener(),
+                new LoreUpdateListener(),
                 new ForgeMainGUIListener(),
                 new ForgeRecipeGUIListener(),
                 new UpdateForgeMainGUIListener()

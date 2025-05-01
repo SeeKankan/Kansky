@@ -3,6 +3,8 @@ package io.seekankan.github.kansky.kanattribute;
 import de.tr7zw.changeme.nbtapi.NBT;
 import io.seekankan.github.kansky.util.ItemStackNBTProxy;
 import io.seekankan.github.kansky.util.KanskyUtil;
+import io.seekankan.github.kanutil.util.KanCollections;
+import io.seekankan.github.kanutil.util.Maps;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -19,21 +21,27 @@ public class ItemConfig implements ConfigurationSerializable {
     public AttributeConfig[] attributes; //damage modifier cannot dupe
     public String displayName;
     public Rarity rarity;
+    public List<String> info;
     //maybe singleton
-    protected ItemConfig(AttributeConfig[] attributes,String displayName,Rarity rarity){
+    protected ItemConfig(AttributeConfig[] attributes,String displayName,Rarity rarity,List<String> info){
         this.attributes = attributes;
         this.displayName = displayName;
         this.rarity = rarity;
+        this.info = info;
     }
     //{===io.seekankan.github.kansky.kanattribute.ItemConfig, attribute={damage={slot=[MAINHAND], value=100}}}
     @Contract("_ -> new")
     @SuppressWarnings("unused")
     public static @NotNull ItemConfig deserialize(@NotNull Map<String,Object> map) {
-        @SuppressWarnings("rawtypes")
-        Map attrsMap = (Map) map.getOrDefault("attribute",new HashMap<>());
+        @SuppressWarnings("unchecked")
+        Map<String, Object> attrsMap = Maps.checkType(
+                (Map<String, Object>) map.getOrDefault("attribute",new HashMap<>()),
+                String.class,
+                Object.class
+        );
         LinkedList<AttributeConfig> attributeConfig = new LinkedList<>();
-        for(Object key : attrsMap.keySet()) {
-            String attrName = (String) key;
+        for(String key : attrsMap.keySet()) {
+            String attrName = key;
             @SuppressWarnings("rawtypes")
             Map attrConfMap = (Map) attrsMap.get(key);
             @SuppressWarnings("unchecked")
@@ -43,7 +51,9 @@ public class ItemConfig implements ConfigurationSerializable {
         }
         String displayName = map.getOrDefault("display_name","UNNAME").toString();
         Rarity rarity = Rarity.getRarity((Integer) map.getOrDefault("rarity","1"));
-        return new ItemConfig(attributeConfig.toArray(new AttributeConfig[0]),displayName,rarity);
+        @SuppressWarnings("unchecked")
+        List<String> info = (List<String>) map.getOrDefault("info",Collections.emptyList());
+        return new ItemConfig(attributeConfig.toArray(new AttributeConfig[0]),displayName,rarity,info);
     }
     @Override
     public Map<String, Object> serialize() {
@@ -58,6 +68,7 @@ public class ItemConfig implements ConfigurationSerializable {
             }});
             put("display_name",displayName);
             put("rarity",rarity.getId());
+            put("info",info);
         }};
     }
 

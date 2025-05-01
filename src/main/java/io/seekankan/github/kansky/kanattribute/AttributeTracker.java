@@ -52,7 +52,7 @@ public interface AttributeTracker {
           return trackModifierForce(entity);
     }
     static Map<String,Double> trackModifierForce(LivingEntity entity) {
-        List<Map<String,Double>> modifiers = new LinkedList<>();
+        List<Map<String,Double>> modifiers = new ArrayList<>();
         attributeTrackers.forEach(tracker -> modifiers.add(tracker.getModifier(entity)));
         Map<String,Double> map = new HashMap<>();
         KanskyUtil.mergeMapByPlus(map,modifiers.toArray(new Map[0]));

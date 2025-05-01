@@ -11,30 +11,6 @@
 
 verbose: false
 config-version: 13
-settings:
-  enable-player-collisions: true
-  player-auto-save-rate: -1
-  max-player-auto-save-per-tick: -1
-  load-permissions-yml-before-plugins: true
-  bungee-online-mode: true
-  save-player-data: true
-  spam-limiter:
-    tab-spam-increment: 10
-    tab-spam-limit: 500
-  book-size:
-    page-max: 2560
-    total-multiplier: 0.98
-  min-chunk-load-threads: 2
-  suggest-player-names-when-null-tab-completions: true
-  region-file-cache-size: 256
-  watchdog:
-    early-warning-every: 5000
-    early-warning-delay: 10000
-  sleep-between-chunk-saves: false
-  save-empty-scoreboard-teams: false
-  use-alternative-luck-formula: false
-  incoming-packet-spam-threshold: 300
-  remove-invalid-statistics: false
 timings:
   enabled: true
   verbose: true
@@ -44,35 +20,59 @@ timings:
   - settings.bungeecord-addresses
   history-interval: 300
   history-length: 3600
+settings:
+  player-auto-save-rate: -1
+  max-player-auto-save-per-tick: -1
+  enable-player-collisions: true
+  load-permissions-yml-before-plugins: true
+  bungee-online-mode: true
+  min-chunk-load-threads: 2
+  book-size:
+    page-max: 2560
+    total-multiplier: 0.98
+  spam-limiter:
+    tab-spam-increment: 10
+    tab-spam-limit: 500
+  save-player-data: true
+  save-empty-scoreboard-teams: false
+  remove-invalid-statistics: false
+  incoming-packet-spam-threshold: 300
+  sleep-between-chunk-saves: false
+  suggest-player-names-when-null-tab-completions: true
+  region-file-cache-size: 256
+  use-alternative-luck-formula: false
+  watchdog:
+    early-warning-every: 5000
+    early-warning-delay: 10000
 messages:
   kick:
-    authentication-servers-down: ''
     flying-player: Flying is not enabled on this server
     flying-vehicle: Flying is not enabled on this server
+    authentication-servers-down: ''
 world-settings:
   default:
     auto-save-interval: -1
     keep-spawn-loaded-range: 8
-    allow-non-player-entities-on-scoreboards: false
+    game-mechanics:
+      disable-sprint-interruption-on-attack: false
+      disable-end-credits: false
+      shield-blocking-delay: 5
+      disable-player-crits: false
+      disable-chest-cat-detection: false
+      village-sieges-enabled: true
+      disable-unloaded-chunk-enderpearl-exploit: true
+      scan-for-legacy-ender-dragon: true
+      allow-permanent-chunk-loaders: false
     nether-ceiling-void-damage: false
+    allow-non-player-entities-on-scoreboards: false
     hopper:
       push-based: false
       cooldown-when-full: true
       disable-move-event: false
-    game-mechanics:
-      disable-end-credits: false
-      shield-blocking-delay: 5
-      disable-player-crits: false
-      disable-sprint-interruption-on-attack: false
-      disable-chest-cat-detection: false
-      disable-unloaded-chunk-enderpearl-exploit: true
-      village-sieges-enabled: true
-      allow-permanent-chunk-loaders: false
-      scan-for-legacy-ender-dragon: true
     container-update-tick-rate: 1
     parrots-are-unaffected-by-player-movement: false
-    disable-explosion-knockback: false
     elytra-hit-wall-damage: true
+    disable-explosion-knockback: false
     frosted-ice:
       enabled: true
       delay:
@@ -80,19 +80,17 @@ world-settings:
         max: 40
     grass-spread-tick-rate: 1
     bed-search-radius: 1
-    armor-stands-tick: true
     use-alternate-fallingblock-onGround-detection: false
-    prevent-tnt-from-moving-in-water: false
     non-player-arrow-despawn-rate: -1
-    keep-spawn-loaded: true
-    armor-stands-do-collision-entity-lookups: true
+    prevent-tnt-from-moving-in-water: false
+    armor-stands-tick: true
     disable-ice-and-snow: false
-    skeleton-horse-thunder-spawn-chance: 0.01
     fire-physics-event-for-redstone: false
-    skip-entity-ticking-in-chunks-scheduled-for-unload: true
-    enable-treasure-maps: true
-    treasure-maps-return-already-discovered: false
+    skeleton-horse-thunder-spawn-chance: 0.01
     disable-teleportation-suffocation-check: false
+    armor-stands-do-collision-entity-lookups: true
+    keep-spawn-loaded: true
+    skip-entity-ticking-in-chunks-scheduled-for-unload: true
     anti-xray:
       enabled: false
       engine-mode: 1
@@ -118,15 +116,42 @@ world-settings:
       - planks
     experience-merge-max-value: -1
     disable-thunder: false
-    remove-corrupt-tile-entities: false
     use-chunk-inhabited-timer: true
-    baby-zombie-movement-speed: 0.5
-    spawner-nerfed-mobs-should-jump: false
-    allow-leashing-undead-horse: false
-    all-chunks-are-slime-chunks: false
-    mob-spawner-tick-rate: 1
+    remove-corrupt-tile-entities: false
     squid-spawn-height:
       maximum: 0.0
+    allow-leashing-undead-horse: false
+    spawner-nerfed-mobs-should-jump: false
+    baby-zombie-movement-speed: 0.5
+    mob-spawner-tick-rate: 1
+    all-chunks-are-slime-chunks: false
+    enable-treasure-maps: true
+    treasure-maps-return-already-discovered: false
+    max-auto-save-chunks-per-tick: 24
+    prevent-moving-into-unloaded-chunks: false
+    max-growth-height:
+      cactus: 3
+      reeds: 3
+    optimize-explosions: false
+    use-vanilla-world-scoreboard-name-coloring: false
+    portal-search-radius: 128
+    delay-chunk-unloads-by: 10s
+    save-queue-limit-for-auto-save: 50
+    max-chunk-sends-per-tick: 81
+    max-chunk-gens-per-tick: 10
+    lootables:
+      auto-replenish: false
+      restrict-player-reloot: true
+      reset-seed-on-fill: true
+      max-refills: -1
+      refresh-min: 12h
+      refresh-max: 2d
+    water-over-lava-flow-speed: 5
+    disable-creeper-lingering-effect: false
+    max-entity-collisions: 8
+    filter-nbt-data-from-spawn-eggs-and-related: true
+    duplicate-uuid-resolver: saferegen
+    duplicate-uuid-saferegen-delete-range: 32
     generator-settings:
       canyon: true
       caves: true
@@ -141,43 +166,18 @@ world-settings:
       disable-extreme-hills-emeralds: false
       disable-extreme-hills-monster-eggs: false
       disable-mesa-additional-gold: false
-    fishing-time-range:
-      MinimumTicks: 100
-      MaximumTicks: 600
+    queue-light-updates: false
     fast-drain:
       lava: false
       water: false
-    despawn-ranges:
-      soft: 32
-      hard: 128
+    fishing-time-range:
+      MinimumTicks: 100
+      MaximumTicks: 600
     falling-block-height-nerf: 0
     tnt-entity-height-nerf: 0
     lava-flow-speed:
       normal: 30
       nether: 10
-    use-vanilla-world-scoreboard-name-coloring: false
-    max-chunk-sends-per-tick: 81
-    optimize-explosions: false
-    delay-chunk-unloads-by: 10s
-    max-chunk-gens-per-tick: 10
-    max-growth-height:
-      cactus: 3
-      reeds: 3
-    portal-search-radius: 128
-    max-auto-save-chunks-per-tick: 24
-    save-queue-limit-for-auto-save: 50
-    water-over-lava-flow-speed: 5
-    prevent-moving-into-unloaded-chunks: false
-    max-entity-collisions: 8
-    filter-nbt-data-from-spawn-eggs-and-related: true
-    disable-creeper-lingering-effect: false
-    lootables:
-      auto-replenish: false
-      restrict-player-reloot: true
-      reset-seed-on-fill: true
-      max-refills: -1
-      refresh-min: 12h
-      refresh-max: 2d
-    duplicate-uuid-resolver: saferegen
-    duplicate-uuid-saferegen-delete-range: 32
-    queue-light-updates: false
+    despawn-ranges:
+      soft: 32
+      hard: 128

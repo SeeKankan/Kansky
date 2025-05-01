@@ -42,3 +42,6 @@ KanGold:
   ==: io.seekankan.github.kansky.kanattribute.ItemConfig
   display_name: "Kankan's gold"
   rarity: 2
+  info:
+    - "Kankan's gold!"
+    - "It is a gold!"

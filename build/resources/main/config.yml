@@ -29,3 +29,4 @@ autosave: 1200
 gui:
   # 20 * 1 = 20
   refresh_cooldown: 20
+lore_update: true

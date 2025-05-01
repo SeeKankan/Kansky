@@ -18,13 +18,14 @@ public class AttributeFormat {
             nameMap.put(attributeId,attributeFormatYAML.getString(attributeId,attributeId));
         }
     }
-    public Map<String, String> getNameMap(boolean writeable) {
+    public static Map<String, String> getNameMap(boolean writeable) {
         return writeable ? nameMap : Collections.unmodifiableMap(nameMap);
     }
-    public String format(String attrId) {
+    public static String format(String attrId) {
         return format(attrId,attrId);
     }
-    public String format(String attrId,String def) {
+    public static String format(String attrId,String def) {
         return nameMap.getOrDefault(attrId,def);
     }
+
 }

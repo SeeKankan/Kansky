@@ -36,6 +36,8 @@ public class Config {
     public static boolean isDebug;
 
     public static long refreshCooldown;
+
+    public static boolean doLoreUpdate;
     public static void loadConfig() {
         Kansky instance = Kansky.getInstance();
         config = instance.getConfig();
@@ -67,5 +69,7 @@ public class Config {
         isDebug = config.getBoolean("debug",false);
 
         refreshCooldown = config.getLong("gui.refresh_cooldown",20);
+
+        doLoreUpdate = config.getBoolean("lore_update",true);
     }
 }
